@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./template-crud
+    ports:
+      - "3000:3000"
+    command: bash -c "npm install && npm start"
+    volumes:
+      - ./template-crud:/usr/src/app
+      
