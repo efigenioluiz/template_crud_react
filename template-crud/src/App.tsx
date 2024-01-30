@@ -1,10 +1,19 @@
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import {Search, PlusCircle} from 'lucide-react'
-import { Table, TableHeader, TableHead, TableBody, TableRow, TableCell} from "./components/ui/table";
+import { Table, TableHeader, TableHead, TableBody, TableRow, TableCell, TableFooter} from "./components/ui/table";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./components/ui/dialog";
 import { Label } from "@radix-ui/react-label";
 import { DialogClose } from "@radix-ui/react-dialog";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
 
 export function App() {
   return (
@@ -76,6 +85,32 @@ export function App() {
                 )
               })}
           </TableBody>
+          <TableFooter>
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious href="#" />
+                    </PaginationItem>
+                      <PaginationItem>
+                        <PaginationLink href="#">1</PaginationLink>
+                      </PaginationItem>
+                      <PaginationItem>
+                        <PaginationLink href="#" isActive>
+                          2
+                        </PaginationLink>
+                      </PaginationItem>
+                      <PaginationItem>
+                        <PaginationLink href="#">3</PaginationLink>
+                      </PaginationItem>
+                      <PaginationItem>
+                        <PaginationEllipsis />
+                    </PaginationItem>
+                    <PaginationItem>
+                  <PaginationNext href="#" />
+                </PaginationItem>
+              </PaginationContent>
+          </Pagination>
+          </TableFooter>
         </Table>
       </div>
     </div>
